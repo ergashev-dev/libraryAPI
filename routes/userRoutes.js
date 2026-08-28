@@ -12,10 +12,10 @@ router.post('/login', loginUser)
 router.post('/send-otp', sendOTP)
 router.post('/verify-otp', verifyOTP)
 
-router.get('/', authMiddleware, roleMiddleware('admin'), getUsers)
-router.get('/:id', authMiddleware, roleMiddleware('admin'), getUser)
+router.get('/', getUsers)
+router.get('/:id', getUser)
 
-router.put('/:id', authMiddleware, roleMiddleware('admin'), editUser)
-router.delete('/:id', authMiddleware, roleMiddleware('admin'), delUser)
+router.put('/:id', editUser)
+router.delete('/:id', delUser)
 
 module.exports = router
