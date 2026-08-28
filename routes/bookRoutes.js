@@ -6,8 +6,8 @@ const { roleMiddleware } = require('../middlewares/roleMiddleware')
 
 router.get('/', getBooks)
 router.get('/:id', getBook)
-router.post('/', authMiddleware, roleMiddleware('admin'), createBook)
-router.put('/:id',authMiddleware, roleMiddleware('admin'), editBook)
-router.delete('/:id', authMiddleware, roleMiddleware('admin'), delBook)
+router.post('/', createBook)
+router.put('/:id', editBook)
+router.delete('/:id', delBook)
 
 module.exports = router
